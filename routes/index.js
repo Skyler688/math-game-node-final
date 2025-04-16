@@ -1,6 +1,7 @@
 const router = require("express").Router();
-const controller = require("../controllers");
+const main = require("../controllers");
 
-router.get("/hello", controller.hello);
+router.get("/", main.home);
+router.get("/logout", main.logout);
 
 module.exports = router;

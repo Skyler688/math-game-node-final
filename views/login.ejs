@@ -3,34 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="auth.css" />
     <title>Login</title>
   </head>
   <body>
-    <h1>Sign in</h1>
-    <form action="/auth/login" method="POST">
-      <label for="username">Username</label>
-      <input
-        type="text"
-        class="username"
-        name="username"
-        placeholder="Enter username"
-        required
-      />
-      <label for="password">Password</label>
-      <input
-        type="password"
-        class="password"
-        name="password"
-        placeholder="Enter password"
-        required
-      />
-      <p><%= message %></p>
-      <button type="submit">Login</button>
-    </form>
+    <main>
+      <h1>Sign in</h1>
+      <form action="/auth/login" method="POST">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          class="username"
+          name="username"
+          placeholder="Enter username"
+          required
+        />
+        <label for="password">Password</label>
+        <input
+          type="password"
+          class="password"
+          name="password"
+          placeholder="Enter password"
+          required
+        />
+        <p><%= message %></p>
+        <button type="submit">Login</button>
+      </form>
 
-    <h2>Or create an account</h2>
-    <form action="/auth/register" method="GET">
-      <button type="submit">Create Account</button>
-    </form>
+      <h2>Or create an account</h2>
+      <form action="/auth/register" method="GET">
+        <button type="submit">Create Account</button>
+      </form>
+    </main>
+    <%- include("./partials/footer") %>
   </body>
 </html>

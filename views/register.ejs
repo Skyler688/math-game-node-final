@@ -6,26 +6,29 @@
     <title>Register</title>
   </head>
   <body>
-    <h1>Create account</h1>
-    <form action="/auth/register" method="POST">
-      <label for="username">Username</label>
-      <input
-        type="text"
-        class="username"
-        name="username"
-        placeholder="Enter username"
-        required
-      />
-      <label for="password">Password</label>
-      <input
-        type="password"
-        class="password"
-        name="password"
-        placeholder="Enter password"
-        required
-      />
-      <p><%= message %></p>
-      <button type="submit">Submit</button>
-    </form>
+    <main>
+      <h1>Create account</h1>
+      <form action="/auth/register" method="POST">
+        <label for="username">Username</label>
+        <input
+          type="text"
+          class="username"
+          name="username"
+          placeholder="Enter username"
+          required
+        />
+        <label for="password">Password</label>
+        <input
+          type="password"
+          class="password"
+          name="password"
+          placeholder="Enter password"
+          required
+        />
+        <p><%= message %></p>
+        <button type="submit">Submit</button>
+      </form>
+    </main>
+    <%- include("./partials/footer") %>
   </body>
 </html>
