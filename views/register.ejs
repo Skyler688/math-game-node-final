@@ -3,29 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/auth.css" />
     <title>Register</title>
   </head>
   <body>
+    <header>
+      <b>Math Games</b>
+      <a href="/auth/login">Login</a>
+    </header>
     <main>
       <h1>Create account</h1>
       <form action="/auth/register" method="POST">
-        <label for="username">Username</label>
+        <label for="username">Username:</label>
         <input
           type="text"
-          class="username"
           name="username"
           placeholder="Enter username"
           required
         />
-        <label for="password">Password</label>
+        <label for="password">Password:</label>
         <input
           type="password"
-          class="password"
           name="password"
           placeholder="Enter password"
           required
         />
-        <p><%= message %></p>
+        <p class="message"><%= message %></p>
         <button type="submit">Submit</button>
       </form>
     </main>

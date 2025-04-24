@@ -40,7 +40,7 @@ app.use((req, res, next) => {
 app.get("/", checkLoginRedirect);
 
 app.use("/auth", require("./routes/userAuth"));
-app.use("/home", require("./routes/index"));
+app.use("/home", require("./routes/home"));
 app.use("/game", require("./routes/game"));
 
 const start = async () => {

@@ -7,10 +7,11 @@
     <title>Login</title>
   </head>
   <body>
+    <header><b>Math Games</b></header>
     <main>
       <h1>Sign in</h1>
       <form action="/auth/login" method="POST">
-        <label for="username">Username</label>
+        <label for="username">Username:</label>
         <input
           type="text"
           class="username"
@@ -18,7 +19,7 @@
           placeholder="Enter username"
           required
         />
-        <label for="password">Password</label>
+        <label for="password">Password:</label>
         <input
           type="password"
           class="password"
@@ -26,7 +27,7 @@
           placeholder="Enter password"
           required
         />
-        <p><%= message %></p>
+        <p class="message"><%= message %></p>
         <button type="submit">Login</button>
       </form>
 

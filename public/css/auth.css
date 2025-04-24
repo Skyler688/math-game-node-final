@@ -1,12 +1,105 @@
-body {
+* {
+  padding: 0;
+  margin: 0;
+  background-color: rgb(223, 225, 195);
+}
+
+header {
+  position: absolute;
+  top: 0px;
+  width: 100vw;
+  font-size: 3vh;
+  font-style: italic;
+  text-align: center;
+  background-color: rgb(112, 129, 84);
+  padding-block: 1vh;
+  border-bottom: 0.25vh solid black;
+  box-shadow: 0 0 70px 3.5vh rgb(131, 137, 114);
+}
+
+b {
+  background-color: rgb(112, 129, 84);
+}
+
+a {
+  background-color: rgb(112, 129, 84);
+  color: black;
+  font-size: 2vh;
+  position: absolute;
+  right: 4vw;
+  top: 1.25vh;
+}
+
+main {
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  height: 100vh;
-  width: 100vw;
+}
+
+h1 {
+  font-size: 4.5vh;
+  margin-block: 2vh;
+  text-shadow: 0.2vh 0.2vh 6px rgb(131, 137, 114);
+}
+
+h2 {
+  font-size: 3.25vh;
+  margin-top: 1.5vh;
+  text-shadow: 0.15vh 0.15vh 5px rgb(131, 137, 114);
+}
+
+form {
+  align-self: center;
+  width: 30vh;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-block: 1vh;
+  font-size: 3vh;
+}
+
+input {
+  width: 23vh;
+  font-size: 2vh;
+  align-self: flex-end;
+  padding-inline: 0.5vh;
+  box-shadow: 0.15vh 0.15vh 3px rgb(131, 137, 114);
+}
+
+button {
+  width: 11vh;
+  padding-block: 0.25vh;
+  align-self: center;
+  font-size: 1.75vh;
+  margin-block: 2vh;
+  border-radius: 0.5vh;
+  box-shadow: 0.3vh 0.3vh 5px rgb(131, 137, 114);
+}
+
+.message {
+  background-color: rgb(223, 225, 195);
+  font-size: 2vh;
+  margin-top: 2vh;
+  align-self: center;
+  color: rgb(169, 20, 20);
 }
 
 footer {
-  justify-self: flex-end;
+  position: absolute;
+  bottom: 0px;
+  width: 100vw;
+  font-size: 1.5vh;
+  text-align: center;
+  background-color: rgb(112, 129, 84);
+  padding-block: 1vh;
+  border-top: 0.25vh solid black;
+  box-shadow: 0 0 70px 3.5vh rgb(131, 137, 114);
+}
+
+p {
+  background-color: rgb(112, 129, 84);
 }
