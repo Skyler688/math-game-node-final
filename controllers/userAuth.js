@@ -6,7 +6,7 @@ const loginPage = (req, res) => {
     res.render("login", { message: null });
   } catch (error) {
     console.error(error);
-    res.status(`Server error: ${error.message}`);
+    res.status(500).send(`Server error: ${error.message}`);
   }
 };
 
@@ -26,11 +26,13 @@ const login = async (req, res) => {
       return res.render("login", { message: "Invalid password, try again." });
     }
 
-    req.session.user = user;
+    req.session.user = {
+      username: user.username,
+    };
     res.redirect("/home");
   } catch (error) {
     console.error(error);
-    res.status(`Server error: ${error.message}`);
+    res.status(500).send(`Server error: ${error.message}`);
   }
 };
 
@@ -39,7 +41,7 @@ const registerPage = (req, res) => {
     res.render("register", { message: null });
   } catch (error) {
     console.error(error);
-    res.status(`Server error: ${error.message}`);
+    res.status(500).send(`Server error: ${error.message}`);
   }
 };
 
@@ -51,11 +53,11 @@ const register = async (req, res) => {
     const user = {
       username: username,
       password: hashedPass,
-      highScore: 0,
+      highScore: [0, 0, 0, 0, 0],
     };
 
     try {
-      const createUser = await UserSchema.create(user);
+      await UserSchema.create(user);
     } catch (error) {
       if (error.code === 11000) {
         console.log("\x1b[33m", "Username already exists");
@@ -65,10 +67,13 @@ const register = async (req, res) => {
       }
     }
 
-    res.render("login", { message: "Account successfully created." }); // add auto fill in user and pass.
+    req.session.user = {
+      username: user.username,
+    };
+    res.redirect("/home");
   } catch (error) {
     console.error(error);
-    res.status(`Server error: ${error.message}`);
+    res.status(500).send(`Server error: ${error.message}`);
   }
 };
 

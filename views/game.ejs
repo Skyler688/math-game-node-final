@@ -6,6 +6,21 @@
     <title>Game</title>
   </head>
   <body>
-    <h1>Game page</h1>
+    <header>
+      <h1 id="method"><%= method %></h1>
+    </header>
+    <a href="/home">Exit</a>
+
+    <h2 id="score"></h2>
+
+    <h2 id="timer"></h2>
+
+    <div id="gamePlay">
+      <button class="start-button" id="start" onclick="startGame()">
+        Start
+      </button>
+    </div>
+
+    <script src="/script/game-api.js"></script>
   </body>
 </html>

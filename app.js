@@ -32,16 +32,27 @@ app.use(
   })
 );
 
+app.use((req, res, next) => {
+  console.log(`"\x1b[36m"${req.method} ${req.originalUrl}"\x1b[0m"`);
+  next();
+});
+
 app.get("/", checkLoginRedirect);
 
 app.use("/auth", require("./routes/userAuth"));
 app.use("/home", require("./routes/index"));
+app.use("/game", require("./routes/game"));
 
 const start = async () => {
   try {
     await connectDB(process.env.MONGO_URI);
     app.listen(PORT, () => {
-      console.log(`Server is running on port ${PORT}`);
+      console.log(
+        "\x1b[1m",
+        "\x1b[32m",
+        `Server is running on port ${PORT}`,
+        "\x1b[0m"
+      );
     });
   } catch (error) {
     console.error(error);

@@ -3,13 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/home.css" />
     <title>Home</title>
   </head>
   <body>
+    <header>Math Games</header>
+    <details>
+      <summary>Menu</summary>
+      <ul>
+        <li><a href="/home/logout">Logout</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Settings</a></li>
+      </ul>
+    </details>
     <main>
-      <h1>Welcome To Math Games</h1>
-      <a href="/home/logout">Logout</a>
+      <h1>Welcome <%= user %></h1>
+      <form action="/game" method="POST">
+        <h3>Addition</h3>
+        <input type="hidden" name="method" value="Addition" />
+        <button type="submit">Play</button>
+      </form>
+      <form action="/game" method="POST">
+        <h3>Subtraction</h3>
+        <input type="hidden" name="method" value="Subtraction" />
+        <button type="submit">Play</button>
+      </form>
+      <form action="/game" method="POST">
+        <h3>Multiplication</h3>
+        <input type="hidden" name="method" value="Multiplication" />
+        <button type="submit">Play</button>
+      </form>
+      <form action="/game" method="POST">
+        <h3>Division</h3>
+        <input type="hidden" name="method" value="Division" />
+        <button type="submit">Play</button>
+      </form>
+      <form action="/game" method="POST">
+        <h3>Mixed</h3>
+        <input type="hidden" name="method" value="Mixed" />
+        <button type="submit">Play</button>
+      </form>
     </main>
-    <%- include("./patials/footer") %>
+    <%- include("./partials/footer") %>
   </body>
 </html>

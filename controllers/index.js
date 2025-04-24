@@ -4,7 +4,8 @@ const home = [
   authMiddleware,
   (req, res) => {
     try {
-      res.render("home");
+      const username = req.session.user.username;
+      res.render("home", { user: username });
     } catch (error) {
       console.error(error);
       res.status(500).send(`Server error: ${error.message}`);
