@@ -42,6 +42,7 @@ app.get("/", checkLoginRedirect);
 app.use("/auth", require("./routes/userAuth"));
 app.use("/home", require("./routes/home"));
 app.use("/game", require("./routes/game"));
+app.use("/profile", require("./routes/profile"));
 
 const start = async () => {
   try {

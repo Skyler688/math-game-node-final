@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <b>Profile</b>
+      <a href="/home">Home</a>
+    </header>
+    <main>
+      <form action="/profile/update" method="POST">
+        <label for="username">Change Username</label>
+        <input type="text" name="username" placeholder="<%= username %>" />
+        <label for="password">Change Password</label>
+        <input type="password" name="password" placeholder="New Password" />
+        <p><%= message %></p>
+        <button type="submit">Update</button>
+      </form>
+
+      <a href="/profile/delete">Delete Profile</a>
+    </main>
+
+    <% include("./partials/footer") %>
+  </body>
+</html>
