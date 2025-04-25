@@ -12,7 +12,6 @@ header {
   justify-content: space-between;
   font-size: 3vh;
   font-style: italic;
-  text-align: center;
   background-color: rgb(103, 121, 74);
   padding-block: 1vh;
   border-bottom: 0.25vh solid black;
@@ -65,9 +64,9 @@ h3 {
 }
 
 button {
+  align-self: center;
   width: 11vh;
   padding-block: 0.25vh;
-  align-self: center;
   font-size: 1.75vh;
   margin-top: 1.5vh;
   margin-bottom: 0.5vh;

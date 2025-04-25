@@ -3,23 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/game.css" />
     <title>Game</title>
   </head>
   <body>
     <header>
-      <h1 id="method"><%= method %></h1>
+      <b id="method"><%= method %></b>
+      <a href="/home">Exit</a>
     </header>
-    <a href="/home">Exit</a>
+    <main id="background">
+      <div id="gamePlay">
+        <h1 id="score"></h1>
 
-    <h2 id="score"></h2>
-
-    <h2 id="timer"></h2>
-
-    <div id="gamePlay">
-      <button class="start-button" id="start" onclick="startGame()">
-        Start
-      </button>
-    </div>
+        <h2 id="timer"></h2>
+        <button class="start-button" id="start" onclick="startGame()">
+          Start
+        </button>
+      </div>
+    </main>
+    <%- include("./partials/footer") %>
 
     <script src="/script/game-api.js"></script>
   </body>

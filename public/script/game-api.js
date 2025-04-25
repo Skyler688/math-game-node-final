@@ -3,10 +3,10 @@ const gameMethod = document.getElementById("method");
 const gamePlay = document.getElementById("gamePlay");
 const timer = document.getElementById("timer");
 const score = document.getElementById("score");
+const background = document.getElementById("background");
 
 const question = document.createElement("div");
 const answers = document.createElement("div");
-const gameOver = document.createElement("div");
 
 const gameData = {
   method: gameMethod.textContent,
@@ -15,6 +15,8 @@ const gameData = {
   score: 0,
   starting: true,
 };
+
+let start = false;
 
 let timerInterval;
 
@@ -50,8 +52,18 @@ function startGame() {
 function sendAnswer(correctAnswer, answer) {
   if (correctAnswer === answer) {
     gameData.correct = true;
+    if (start) {
+      timer.style.color = "rgb(50, 143, 33)";
+
+      resetTimerColor();
+    }
+
+    start = true;
   } else {
     gameData.correct = false;
+    timer.style.color = "rgb(154, 21, 21)";
+
+    resetTimerColor();
   }
 
   fetch("http://localhost:3000/game/question", {
@@ -119,6 +131,7 @@ function sendAnswer(correctAnswer, answer) {
         quest_4 = data.answer;
       }
 
+      answers.className = "answers";
       question.innerHTML = `<h3>${data.num_1} ${operator} ${data.num_2}</h3>`;
       answers.innerHTML = `<button onclick="sendAnswer(${data.answer}, ${quest_1})">${quest_1}</button>
       <button onclick="sendAnswer(${data.answer}, ${quest_2})>${quest_2}">${quest_2}</button>
@@ -176,21 +189,32 @@ function startTimer() {
           console.log(data);
 
           if (data.newHighScore) {
-            gameOver.innerHTML = `<h2>Game Over</h2><h3>Score ${gameData.score}</h3><h3>New High Score ${data.highScore}`;
+            gamePlay.innerHTML = `<h1>Game Over</h1><h2>Score: ${gameData.score}</h2><h4>New High Score: ${data.highScore}</h4>`;
           } else {
-            gameOver.innerHTML = `<h2>Game Over</h2><h3>Score ${gameData.score}</h3><h3>High Score ${data.highScore}`;
+            gamePlay.innerHTML = `<h1>Game Over</h1><h2>Score: ${gameData.score}</h2><h4>High Score: ${data.highScore}</h4>`;
           }
 
-          gameOver.innerHTML += `<form action="/game" method="POST">
+          gamePlay.innerHTML += `<form action="/game" method="POST">
         <input type="hidden" name="method" value="${gameData.method}" />
         <button type="submit">Try Again</button>
         </form>`;
-
-          gamePlay.appendChild(gameOver);
         })
         .catch((error) => {
           return console.error("Fetch error:", error);
         });
     }
   }, 1000);
+}
+
+function resetTimerColor() {
+  let count = 0;
+
+  const interval = setInterval(() => {
+    count++;
+
+    if (count >= 3) {
+      clearInterval(interval);
+      timer.style.color = "black";
+    }
+  }, 100);
 }

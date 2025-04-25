@@ -1,0 +1,116 @@
+* {
+  padding: 0;
+  margin: 0;
+  background-color: rgb(223, 225, 195);
+}
+
+header {
+  position: absolute;
+  top: 0px;
+  width: 100vw;
+  font-size: 3vh;
+  font-style: italic;
+  text-align: center;
+  background-color: rgb(103, 121, 74);
+  padding-block: 1vh;
+  border-bottom: 0.25vh solid black;
+  box-shadow: 0 0 7vh 3.5vh rgb(131, 137, 114);
+}
+
+b {
+  background-color: rgb(103, 121, 74);
+}
+
+a {
+  background-color: rgb(103, 121, 74);
+  color: black;
+  font-size: 2vh;
+  position: absolute;
+  right: 4vw;
+  top: 1.25vh;
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#gamePlay {
+  width: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.start-button {
+  width: 11vh;
+  padding-block: 0.25vh;
+  align-self: center;
+  font-size: 1.75vh;
+  margin-top: 1.5vh;
+  margin-bottom: 0.5vh;
+  border-radius: 0.5vh;
+  box-shadow: 0.3vh 0.3vh 5px rgb(131, 137, 114);
+}
+
+h1 {
+  align-self: flex-start;
+  font-size: 4.5vh;
+  text-shadow: 0.2vh 0.2vh 6px rgb(131, 137, 114);
+}
+
+h2 {
+  align-self: flex-end;
+  font-size: 4vh;
+  margin-block: 1vh;
+  text-shadow: 0.15vh 0.15vh 5px rgb(131, 137, 114);
+}
+
+h3 {
+  font-size: 4vh;
+  margin-block: 1.5vh;
+  text-shadow: 0.15vh 0.15vh 5px rgb(131, 137, 114);
+}
+
+h4 {
+  font-size: 2.5vh;
+  margin-top: 1vh;
+  margin-bottom: 2vh;
+}
+
+.answers {
+  align-self: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+button {
+  width: 11vh;
+  padding-block: 0.25vh;
+  font-size: 1.75vh;
+  margin-block: 1.5vh;
+  margin-inline: 1vh;
+  border-radius: 0.5vh;
+  box-shadow: 0.3vh 0.3vh 5px rgb(131, 137, 114);
+}
+
+footer {
+  position: absolute;
+  bottom: 0px;
+  width: 100vw;
+  font-size: 1.5vh;
+  text-align: center;
+  background-color: rgb(103, 121, 74);
+  padding-block: 1vh;
+  border-top: 0.25vh solid black;
+  box-shadow: 0 0 7vh 3.5vh rgb(131, 137, 114);
+}
+
+p {
+  background-color: rgb(103, 121, 74);
+}
