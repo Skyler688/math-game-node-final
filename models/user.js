@@ -12,7 +12,10 @@ const UserInfo = new mongoose.Schema({
     type: String,
     required: true,
   },
-  highScore: [Number],
+  highScore: {
+    type: [Number],
+    default: [0, 0, 0, 0, 0],
+  },
 });
 
 module.exports = mongoose.model("user", UserInfo);

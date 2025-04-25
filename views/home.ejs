@@ -7,39 +7,50 @@
     <title>Home</title>
   </head>
   <body>
-    <header><b>Math Games</b></header>
-    <details>
-      <summary>Menu</summary>
-      <ul>
-        <li><a href="/home/logout">Logout</a></li>
-        <li><a href="#">Profile</a></li>
-        <li><a href="#">Settings</a></li>
-      </ul>
-    </details>
+    <header>
+      <a href="#">Profile</a>
+      <b>Math Games</b>
+      <a href="/home/logout">Logout</a>
+    </header>
     <main>
       <h1>Welcome <%= user %></h1>
       <form action="/game" method="POST">
         <h3>Addition</h3>
+        <p class="highScore">
+          High Score: <b class="highScore"><%= highScore[0] %></b>
+        </p>
         <input type="hidden" name="method" value="Addition" />
         <button type="submit">Play</button>
       </form>
       <form action="/game" method="POST">
         <h3>Subtraction</h3>
+        <p class="highScore">
+          High Score: <b class="highScore"><%= highScore[1] %></b>
+        </p>
         <input type="hidden" name="method" value="Subtraction" />
         <button type="submit">Play</button>
       </form>
       <form action="/game" method="POST">
         <h3>Multiplication</h3>
+        <p class="highScore">
+          High Score: <b class="highScore"><%= highScore[2] %></b>
+        </p>
         <input type="hidden" name="method" value="Multiplication" />
         <button type="submit">Play</button>
       </form>
       <form action="/game" method="POST">
         <h3>Division</h3>
+        <p class="highScore">
+          High Score: <b class="highScore"><%= highScore[3] %></b>
+        </p>
         <input type="hidden" name="method" value="Division" />
         <button type="submit">Play</button>
       </form>
       <form action="/game" method="POST">
         <h3>Mixed</h3>
+        <p class="highScore">
+          High Score: <b class="highScore"><%= highScore[4] %></b>
+        </p>
         <input type="hidden" name="method" value="Mixed" />
         <button type="submit">Play</button>
       </form>

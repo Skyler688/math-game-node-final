@@ -1,11 +1,20 @@
 const authMiddleware = require("../middleware/userSession");
+const user = require("../models/user");
+const UserSchema = require("../models/user");
 
 const home = [
   authMiddleware,
-  (req, res) => {
+  async (req, res) => {
     try {
       const username = req.session.user.username;
-      res.render("home", { user: username });
+
+      const user = await UserSchema.findOne({ username: username });
+      if (!user) {
+        console.log("Error finding user:" + error);
+        res.status(500).json({ message: "Error finding user" });
+      }
+
+      res.render("home", { user: username, highScore: user.highScore });
     } catch (error) {
       console.error(error);
       res.status(500).send(`Server error: ${error.message}`);
