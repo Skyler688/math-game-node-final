@@ -23,7 +23,7 @@ const generateQuestion = [
       let { method, correct, time, score, starting } = req.body;
 
       console.log(method);
-      console.log("Correct " + correct);
+      console.log("Correct: " + correct);
 
       const num_1 = Math.floor(Math.random() * (10 + score * 5));
       const num_2 = Math.floor(Math.random() * (10 + score * 5));
@@ -57,7 +57,7 @@ const generateQuestion = [
         return res.status(500).send("Error invalid (method) in request");
       }
 
-      console.log("Answer: " + answer);
+      // console.log("Answer: " + answer);
       answer = Math.round(answer * 100) / 100;
       const wrongAnswers = [0, 0, 0];
 
@@ -100,7 +100,7 @@ const generateQuestion = [
         time -= 10;
       }
 
-      console.log(num_1);
+      // console.log(num_1);
       res.status(200).json({
         num_1: num_1,
         method: method,
@@ -124,9 +124,9 @@ const getHighScore = [
       const { gameType, score } = req.body;
       const username = req.session.user.username;
 
-      console.log(username);
-      console.log(gameType);
-      console.log(score);
+      // console.log(username);
+      // console.log(gameType);
+      // console.log(score);
       const user = await UserSchema.findOne({ username: username });
       if (!user) {
         console.log("User not found");

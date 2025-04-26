@@ -15,6 +15,7 @@ header {
   padding-block: 1vh;
   border-bottom: 0.25vh solid black;
   box-shadow: 0 0 7vh 3.5vh rgb(131, 137, 114);
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 b {

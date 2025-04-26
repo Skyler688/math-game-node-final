@@ -53,7 +53,7 @@ function sendAnswer(correctAnswer, answer) {
   if (correctAnswer === answer) {
     gameData.correct = true;
     if (start) {
-      timer.style.color = "rgb(50, 143, 33)";
+      timer.style.color = "rgb(50, 129, 36)";
 
       resetTimerColor();
     }
@@ -61,7 +61,7 @@ function sendAnswer(correctAnswer, answer) {
     start = true;
   } else {
     gameData.correct = false;
-    timer.style.color = "rgb(154, 21, 21)";
+    timer.style.color = "rgb(169, 20, 20)";
 
     resetTimerColor();
   }

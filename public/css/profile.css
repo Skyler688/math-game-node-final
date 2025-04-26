@@ -8,10 +8,9 @@ header {
   position: absolute;
   top: 0px;
   width: 100vw;
-  display: flex;
-  justify-content: space-between;
   font-size: 3vh;
   font-style: italic;
+  text-align: center;
   background-color: rgb(103, 121, 74);
   padding-block: 1vh;
   border-bottom: 0.25vh solid black;
@@ -23,11 +22,12 @@ b {
   background-color: rgb(103, 121, 74);
 }
 
-a {
+.home {
   background-color: rgb(103, 121, 74);
   color: black;
   font-size: 2vh;
-  margin-inline: 4vw;
+  position: absolute;
+  right: 4vw;
   top: 1.25vh;
 }
 
@@ -45,37 +45,63 @@ h1 {
   text-shadow: 0.2vh 0.2vh 6px rgb(131, 137, 114);
 }
 
+h2 {
+  font-size: 3.25vh;
+  margin-top: 1.5vh;
+  text-shadow: 0.15vh 0.15vh 5px rgb(131, 137, 114);
+}
+
 form {
+  align-self: center;
   width: 35vh;
   display: flex;
   flex-direction: column;
 }
 
-h3 {
-  font-size: 3.5vh;
-  margin-top: 1.5vh;
-  margin-bottom: 0.25vh;
-  text-shadow: 0.1vh 0.1vh 4px rgb(131, 137, 114);
-  align-self: flex-end;
-  margin-right: 14vh;
+label {
+  margin-block: 1vh;
+  font-size: 3vh;
 }
 
-.highScore {
-  background-color: rgb(223, 225, 195);
-  font-size: 2.5vh;
+input {
+  width: 23vh;
+  font-size: 2vh;
   align-self: flex-end;
-  margin-right: 2vh;
+  padding-inline: 0.5vh;
+  box-shadow: 0.15vh 0.15vh 3px rgb(131, 137, 114);
 }
 
 button {
-  align-self: flex-end;
   width: 11vh;
   padding-block: 0.25vh;
+  align-self: center;
   font-size: 1.75vh;
-  margin-top: 1.5vh;
-  margin-bottom: 0.5vh;
+  margin-top: 4vh;
+  margin-bottom: 2vh;
   border-radius: 0.5vh;
   box-shadow: 0.3vh 0.3vh 5px rgb(131, 137, 114);
+}
+
+#yesNo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h3 {
+  font-size: 2.5vh;
+}
+
+.option {
+  display: flex;
+  justify-content: center;
+}
+
+.option a {
+  margin-inline: 5vh;
+  margin-block: 2vh;
+  font-size: 2.25vh;
+  color: black;
 }
 
 footer {
